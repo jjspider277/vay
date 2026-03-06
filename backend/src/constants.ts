@@ -2,8 +2,8 @@ export const DEFAULT_PORT = 3001;
 
 export const LOW_BATTERY_THRESHOLD = 20;
 export const DEFAULT_FLEET_SIZE = 6;
-export const DEFAULT_TELEMETRY_TICK_MS = 15000;
-export const DEFAULT_SIMULATION_SPEED_MULTIPLIER = 30;
+export const DEFAULT_TELEMETRY_TICK_MS = 1000; // Update every 1 second
+export const DEFAULT_SIMULATION_SPEED_MULTIPLIER = 500; // 500x faster movement
 
 export const DEFAULT_BULK_ADD_COUNT = 10;
 export const MIN_BULK_ADD_COUNT = 1;
@@ -26,12 +26,12 @@ export const SYNTHETIC_ROUTE_POINT_COUNT = 20;
 export const SYNTHETIC_ROUTE_CURVE_AMPLITUDE = 0.002;
 export const ROUTE_CACHE_COORDINATE_PRECISION = 1000;
 
-export const WAITING_BATTERY_DRAIN = 0.03;
-export const MOVING_BATTERY_DRAIN = 0.2;
-export const ROUTE_STEP_FACTOR = 0.0002;
-export const DRIFT_STEP_FACTOR = 0.0001;
+export const WAITING_BATTERY_DRAIN = 0.003;
+export const MOVING_BATTERY_DRAIN = 0.02;
+export const ROUTE_STEP_FACTOR = 0.2; // Adjusts how far along the route a vehicle moves each telemetry tick, as a fraction of the total route distance. Higher means faster movement and more frequent route changes.
+export const DRIFT_STEP_FACTOR = 0.0001; // Adjusts how much random "drift" is applied to vehicle location each telemetry tick, as a fraction of the total route distance. Higher means more erratic movement.
 export const HEADING_STEP_FACTOR = 10;
-export const STATUS_REEVALUATION_CHANCE = 0.01;
+export const STATUS_REEVALUATION_CHANCE = 0.001; // 0.1% chance per tick
 export const INITIAL_BATTERY_MIN = 20;
 export const INITIAL_BATTERY_RANGE = 80;
 export const BULK_BATTERY_MIN = 35;

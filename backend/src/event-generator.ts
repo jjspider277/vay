@@ -540,32 +540,10 @@ export class EventGenerator {
         vehicle.location.lng += (dx / distance) * routeStep;
         vehicle.heading = this.normalizeHeading(Math.atan2(dx, dy) * (180 / Math.PI));
       }
-    } else {
-      vehicle.location.lat += (Math.random() - 0.5) * driftStep;
-      vehicle.location.lng += (Math.random() - 0.5) * driftStep;
-      vehicle.heading = this.normalizeHeading(vehicle.heading + (Math.random() - 0.5) * headingStep);
     }
+    // FREE vehicles don't move - they stay parked
 
     vehicle.battery = Math.max(0, vehicle.battery - Math.random() * MOVING_BATTERY_DRAIN * Math.sqrt(speedMultiplier));
-
-    if (Math.random() < STATUS_REEVALUATION_CHANCE * Math.sqrt(speedMultiplier)) {
-      const statuses = [VehicleStatus.FREE, VehicleStatus.WITH_CUSTOMER, VehicleStatus.EN_ROUTE];
-      vehicle.status = statuses[Math.floor(Math.random() * statuses.length)];
-
-      if (vehicle.status === VehicleStatus.EN_ROUTE) {
-        this.generateRoute(vehicle.location).then(route => {
-          vehicle.route = route;
-        });
-        vehicle.activeTrip = undefined;
-      } else if (vehicle.status === VehicleStatus.WITH_CUSTOMER) {
-        vehicle.route = undefined;
-        vehicle.activeTrip = this.generateTrip(vehicle.location);
-      } else {
-        vehicle.route = undefined;
-        vehicle.activeTrip = undefined;
-      }
-    }
-
     vehicle.lastUpdate = Date.now();
   }
 }

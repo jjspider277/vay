@@ -73,6 +73,16 @@ pnpm start
 
 Frontend URL: `http://localhost:3000`
 
+## Operator Actions
+
+Use these pages during demo operations:
+
+- Main dashboard: `http://localhost:3000`
+- Simulate trip + fleet boost: `http://localhost:3000/simulate-trip`
+
+In `/simulate-trip`, use **Fleet Boost** -> **Add Random Cars In Bulk** to add more vehicles to the fleet in real time.
+
+
 ## Fast verification
 
 In separate terminals:
