@@ -1,0 +1,48 @@
+export const DEFAULT_PORT = 3001;
+
+export const LOW_BATTERY_THRESHOLD = 20;
+export const DEFAULT_FLEET_SIZE = 6;
+export const DEFAULT_TELEMETRY_TICK_MS = 15000;
+export const DEFAULT_SIMULATION_SPEED_MULTIPLIER = 30;
+
+export const DEFAULT_BULK_ADD_COUNT = 10;
+export const MIN_BULK_ADD_COUNT = 1;
+export const MAX_BULK_ADD_COUNT = 200;
+
+export const VEHICLE_ID_PADDING = 3;
+export const AGENT_ID_POOL_SIZE = 100;
+
+export const ETA_MIN_MINUTES = 1;
+export const ETA_CITY_SPEED_KMH = 32;
+
+export const TRIP_DURATION_BASE_MS = 600000;
+export const TRIP_DURATION_VARIANCE_MS = 1800000;
+
+export const EARTH_RADIUS_KM = 6371;
+export const DEGREE_TO_RADIAN = Math.PI / 180;
+
+export const RANDOM_LOCATION_JITTER = 0.002;
+export const SYNTHETIC_ROUTE_POINT_COUNT = 20;
+export const SYNTHETIC_ROUTE_CURVE_AMPLITUDE = 0.002;
+export const ROUTE_CACHE_COORDINATE_PRECISION = 1000;
+
+export const WAITING_BATTERY_DRAIN = 0.03;
+export const MOVING_BATTERY_DRAIN = 0.2;
+export const ROUTE_STEP_FACTOR = 0.0002;
+export const DRIFT_STEP_FACTOR = 0.0001;
+export const HEADING_STEP_FACTOR = 10;
+export const STATUS_REEVALUATION_CHANCE = 0.01;
+export const INITIAL_BATTERY_MIN = 20;
+export const INITIAL_BATTERY_RANGE = 80;
+export const BULK_BATTERY_MIN = 35;
+export const BULK_BATTERY_RANGE = 65;
+export const EN_ROUTE_STATUS_PROBABILITY = 0.1;
+export const WITH_CUSTOMER_STATUS_PROBABILITY = 0.3;
+
+export const MAX_LOGS_PER_VEHICLE = 250;
+export const TELEMETRY_LOG_INTERVAL_MS = 60000;
+export const LOG_ID_RANDOM_SPACE = 1000;
+export const COVERAGE_GRID_SIZE = 0.02;
+export const COVERAGE_LOW_THRESHOLD = 3;
+export const COVERAGE_MEDIUM_THRESHOLD = 7;
+
